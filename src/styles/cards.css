@@ -1,0 +1,179 @@
+.playing-card {
+  --card-w: 112px;
+  position: relative;
+  flex: 0 0 var(--card-w);
+  width: var(--card-w);
+  height: calc(var(--card-w) * 1.42);
+  display: grid;
+  grid-template-rows: auto 1fr auto auto auto;
+  justify-items: center;
+  padding: 7px 8px 6px;
+  border: 1px solid #b8a37540;
+  border-radius: 5px;
+  background:
+    radial-gradient(ellipse at 50% 35%, #ffffff0d, transparent 60%),
+    linear-gradient(160deg, #26302a, #171c19 60%, #121513);
+  box-shadow:
+    inset 0 0 0 3px #0f1111,
+    inset 0 0 0 4px #b8a37522,
+    0 6px 16px #00000066;
+  text-align: center;
+  transition:
+    transform 0.2s var(--ease),
+    box-shadow 0.2s,
+    border-color 0.2s,
+    opacity 0.2s;
+}
+
+.playing-card.cat-trick {
+  background:
+    radial-gradient(ellipse at 50% 35%, #ffffff0d, transparent 60%),
+    linear-gradient(160deg, #2a2633, #19171e 60%, #131216);
+}
+
+.playing-card.cat-gear {
+  background:
+    radial-gradient(ellipse at 50% 35%, #ffffff0d, transparent 60%),
+    linear-gradient(160deg, #302b20, #1d1a14 60%, #141310);
+}
+
+.playing-card.attack {
+  border-color: #b04a4370;
+}
+
+.playing-card.attack .card-emblem {
+  color: #e98a80;
+}
+
+.playing-card.reaction .card-emblem {
+  color: #b9c8de;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.card-corner {
+  font: 12px/1.05 var(--latin);
+  color: #d6cfbb;
+  text-align: left;
+}
+
+.card-corner.red {
+  color: #e0665c;
+}
+
+.card-kind {
+  font-size: 10px;
+  color: var(--fg-faint);
+  writing-mode: vertical-rl;
+  letter-spacing: 2px;
+}
+
+.card-emblem {
+  display: grid;
+  place-items: center;
+  align-self: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #b8a37530;
+  transform: rotate(45deg);
+  color: var(--gold-bright);
+}
+
+.card-emblem svg {
+  transform: rotate(-45deg);
+}
+
+.card-name {
+  font: 17px/1.3 var(--serif);
+  letter-spacing: 2px;
+  font-weight: normal;
+  margin-top: 4px;
+}
+
+.card-text {
+  font-size: 10.5px;
+  line-height: 1.35;
+  color: var(--fg-dim);
+  min-height: 2.7em;
+  display: grid;
+  place-items: center;
+}
+
+.card-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 3px;
+  border-top: 1px solid #ffffff10;
+  font-size: 10px;
+  color: var(--fg-faint);
+}
+
+.playing-card:hover:not(.unavailable) {
+  transform: translateY(-6px);
+  border-color: #b8a37599;
+  filter: none;
+}
+
+.playing-card.chosen {
+  transform: translateY(-12px);
+  border-color: var(--gold-bright);
+  box-shadow:
+    inset 0 0 0 3px #0f1111,
+    inset 0 0 0 4px #dcc48e66,
+    0 0 0 1px var(--gold-bright),
+    0 14px 30px #00000099,
+    0 0 26px #b8a37544;
+}
+
+.playing-card.hinted {
+  outline: 2px dashed #8fc4b9;
+  outline-offset: 3px;
+}
+
+.playing-card.unavailable {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.playing-card.unavailable.chosen {
+  opacity: 0.85;
+}
+
+.playing-card:disabled {
+  cursor: default;
+}
+
+@media (max-width: 760px) {
+  .playing-card {
+    --card-w: 88px;
+    padding: 5px 6px 4px;
+  }
+  .card-emblem {
+    width: 32px;
+    height: 32px;
+  }
+  .card-emblem svg {
+    width: 22px;
+    height: 22px;
+  }
+  .card-name {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .card-text {
+    font-size: 9.5px;
+  }
+  .card-foot {
+    font-size: 9px;
+  }
+  .card-foot kbd {
+    display: none;
+  }
+}

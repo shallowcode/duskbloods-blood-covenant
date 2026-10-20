@@ -1,0 +1,418 @@
+.selection {
+  position: relative;
+  flex: 1;
+  background-size: cover;
+  background-position: center top;
+  isolation: isolate;
+}
+
+.selection-veil {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, #0f1111f5 0%, #0f1111d9 45%, #0f1111ee 100%),
+    linear-gradient(#0f111199, #0f1111 85%);
+}
+
+.selection-inner {
+  max-width: 1440px;
+  margin: auto;
+  padding: 28px clamp(16px, 5vw, 72px) 18px;
+}
+
+.selection-heading h1 {
+  font: 30px/1.7 var(--serif);
+  letter-spacing: 5px;
+}
+
+.selection-heading p {
+  font-size: 14px;
+  color: var(--fg-dim);
+}
+
+.hero-stage {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  margin-top: -40px;
+}
+
+.hero-art-space {
+  position: relative;
+  height: min(520px, 62vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  overflow: hidden;
+  animation: rise 0.6s var(--ease);
+}
+
+.portrait-aura {
+  position: absolute;
+  inset: 40px 14%;
+  filter: blur(30px);
+  z-index: -1;
+}
+
+.hero-art {
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  mask-image: linear-gradient(#000 80%, transparent);
+}
+
+.hero-roman {
+  position: absolute;
+  font: 320px/0.8 var(--latin);
+  color: #ad9a6c0c;
+  z-index: -1;
+  left: 4%;
+  top: 70px;
+}
+
+.weapon-caption {
+  position: absolute;
+  bottom: 16px;
+  font-size: 12px;
+  letter-spacing: 4px;
+  color: var(--fg-dim);
+}
+
+.hero-info {
+  padding: 24px 0 12px clamp(20px, 4vw, 52px);
+  border-left: 1px solid var(--line-soft);
+  display: grid;
+  gap: 12px;
+  animation: fade 0.5s var(--ease);
+}
+
+.hero-info h2 {
+  font: 40px/1.2 var(--serif);
+  letter-spacing: 6px;
+}
+
+.english-name {
+  font: italic 16px var(--latin);
+  color: var(--fg-dim);
+  letter-spacing: 2px;
+  margin-top: -8px;
+}
+
+.hero-quote {
+  font-family: var(--serif);
+  color: #cfc7b2;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 26px;
+  align-items: flex-end;
+  padding: 12px 0;
+  border-block: 1px solid var(--line-soft);
+  font-size: 12px;
+  color: var(--fg-dim);
+}
+
+.hero-stats strong {
+  display: block;
+  font: 20px/1.3 var(--serif);
+  color: var(--fg);
+}
+
+.ratings {
+  display: flex;
+  gap: 16px;
+  margin-left: auto;
+}
+
+.rating {
+  display: grid;
+  gap: 4px;
+}
+
+.rating-bar {
+  display: flex;
+  gap: 3px;
+}
+
+.rating-bar i {
+  width: 12px;
+  height: 4px;
+  background: #ffffff18;
+}
+
+.rating-bar i.on {
+  background: var(--gold);
+}
+
+.ability {
+  display: grid;
+  gap: 2px;
+}
+
+.ability-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.ability h3 {
+  font: 18px/1.5 var(--serif);
+  letter-spacing: 2px;
+}
+
+.ability-head span {
+  font-size: 11px;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.ability p {
+  font-size: 13px;
+  color: var(--fg-dim);
+}
+
+.hero-tip {
+  font-size: 13px;
+  color: var(--gold);
+}
+
+.difficulty,
+.hero-roster {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.difficulty {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.difficulty button {
+  display: grid;
+  gap: 2px;
+  text-align: left;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ffffff04;
+}
+
+.difficulty button strong {
+  font: 14px var(--serif);
+  letter-spacing: 2px;
+}
+
+.difficulty button small {
+  font-size: 11px;
+  color: var(--fg-faint);
+  line-height: 1.4;
+}
+
+.difficulty button.on {
+  border-color: var(--gold);
+  background: #b8a37516;
+}
+
+.start-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.start-row .primary {
+  flex: 1;
+  min-width: 220px;
+}
+
+.hero-record {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--fg-dim);
+}
+
+.hero-roster {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.roster-card {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+  border: 1px solid #ffffff12;
+  border-radius: var(--radius);
+  text-align: left;
+  background: #000;
+}
+
+.roster-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  opacity: 0.55;
+  transition:
+    opacity 0.3s,
+    transform 0.5s var(--ease);
+}
+
+.roster-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 40%, #000000d9);
+}
+
+.roster-card div {
+  position: absolute;
+  z-index: 1;
+  left: 14px;
+  right: 10px;
+  bottom: 12px;
+}
+
+.roster-card strong {
+  display: block;
+  font: 16px/1.3 var(--serif);
+  letter-spacing: 2px;
+}
+
+.roster-card small {
+  font: 11px var(--latin);
+  color: var(--fg-dim);
+}
+
+.roster-index,
+.roster-wins {
+  position: absolute;
+  z-index: 1;
+  top: 10px;
+  font: 11px var(--latin);
+  color: var(--fg-dim);
+}
+
+.roster-index {
+  left: 12px;
+}
+
+.roster-wins {
+  right: 10px;
+  color: var(--gold);
+}
+
+.roster-card:hover img,
+.roster-card.selected img {
+  opacity: 0.95;
+  transform: scale(1.04);
+}
+
+.roster-card.selected {
+  border-color: var(--gold);
+  box-shadow:
+    0 0 0 1px var(--gold),
+    0 10px 30px #00000088;
+}
+
+.selection-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--fg-faint);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 980px) {
+  .hero-stage {
+    grid-template-columns: 1fr;
+    margin-top: 0;
+  }
+  .hero-art-space {
+    height: 300px;
+  }
+  .hero-info {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .hero-roster {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .selection-inner {
+    display: flex;
+    flex-direction: column;
+  }
+  .hero-roster {
+    order: -1;
+    grid-template-columns: repeat(6, 92px);
+    overflow-x: auto;
+    margin: 14px -16px 0;
+    padding: 0 16px 4px;
+    scrollbar-width: none;
+  }
+  .selection-heading {
+    order: -2;
+  }
+  .roster-card {
+    height: 112px;
+  }
+  .roster-card strong {
+    font-size: 13px;
+    letter-spacing: 0;
+  }
+  .roster-card small {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-info h2 {
+    font-size: 32px;
+  }
+  .ratings {
+    margin-left: 0;
+  }
+  .difficulty {
+    grid-template-columns: 1fr;
+  }
+  .difficulty button {
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .hero-roster {
+    gap: 8px;
+  }
+}
